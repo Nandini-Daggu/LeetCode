@@ -1,11 +1,11 @@
 class Solution {
     public int[] singleNumber(int[] nums) {
         int[] ans = new int[2];
-        int res = 0;
-        for(int i = 0;i<nums.length;i++){
+        int res = nums[0];
+        for(int i = 1;i<nums.length;i++){
             res ^=nums[i]; 
         }
-        int bit = res&-res;
+        int bit = res&~(res-1);
         int num1 = 0,num2=0;
         for(int num:nums){
             if((num&bit)!=0){
