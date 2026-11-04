@@ -1,6 +1,6 @@
 class Solution {
     public int minMoves(int[] nums) {
-        int min = Integer.MAX_VALUE;
+        int min = nums[0];
         int count = 0;
         for(int ele:nums){
             min = Math.min(ele,min);
